@@ -21,10 +21,7 @@ container.appendChild(buttonsDiv);
 
 buttons.forEach(button => {
     
-    button.addEventListener('click', e => {
-        
-        playRound(e.target.id, computerPlay());
-    });
+    button.addEventListener('click', e => handleclick(e));
 });
 
 const result = document.createElement('div');
@@ -45,11 +42,21 @@ roundInfo.classList.add('round-info');
 scores.append(playerScore, computerScore);
 result.appendChild(roundInfo);
 result.appendChild(scores);
-container.appendChild(result);
+container.insertBefore(result, buttonsDiv)
 
 playerScore.innerText = playerPoints;
 computerScore.innerText = computerPoints;
 roundInfo.innerText = "Choose your weapon";
+
+
+function handleclick(e) {
+
+    const btn = e.target;
+    playRound(btn.id, computerPlay());
+
+    btn.classList.add('click');
+    setTimeout(() => btn.classList.remove('click'), 150);
+}
 
 function computerPlay() {
 
@@ -114,33 +121,7 @@ function playRound(playerSelection, computerSelection) {
         const lossMessage = "You lost this round. Choose again to start anew";
         roundInfo.innerText = playerPoints != computerPoints ?
                                 (playerPoints > computerPoints ? winMessage : lossMessage) :
-                                "This round is a draw";
+                                "This round is a draw. Choose again to start anew";
 
     }
 }
-
-// function game() {
-    
-
-//     function getWinner(winStat) {
-    
-//     }
-    
-//     for (let i = 0; i < 5; i++) {
-        
-//         let choice = "";
-        
-//         while (selections.indexOf(choice.toLowerCase()) < 0)
-//         choice = prompt("Enter rock, paper or scissors");
-    
-//         let winStat = playRound(choice, computerPlay());
-    
-//         winStat >= 0 ?
-//         (winStat ? scores.player++ : scores.computer++) :
-//         null;
-//     }
-
-
-// }
-
-// game();

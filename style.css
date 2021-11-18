@@ -1,0 +1,92 @@
+body {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande',
+    'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #131313;
+    display: flex;
+    flex-direction: column;
+    padding: 0 15%;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* height: 100vh; */
+    padding-top: 70px;
+    flex: 1;
+}
+
+.header {
+    color: #c0c0c0;
+    text-align: center;
+    font-size: 60px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight: bold;
+    margin-top: 50px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: -4px 8px 10px #c0c0c0,
+                4px 8px 10px #c0c0c0,
+                -4px -2px 5px #c0c0c0,
+                4px -2px 5px #c0c0c0;
+}
+
+.result {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+.round-info {
+    font-size: 40px;
+    color: white;
+    text-align: center;
+    height: 100px;
+}
+
+.scores {
+    display: flex;
+    justify-content: center;
+    color: #c0c0c0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 100px;
+}
+
+.player-score,
+.computer-score {
+    width: 150px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 50px;
+}
+
+button {
+    width: 125px;
+    height: 125px;
+    margin: 0 16px;
+    background-color: rgb(40, 61, 90);
+    color: white;
+    border: 7px outset #c0c0c0;
+    border-radius: 12px;
+    font-size: 1.2em;
+    font-weight: bolder;
+}
+
+button:hover {
+    background-color: rgb(62, 79, 102);
+}
+
+.click {
+    border-style: inset;
+    color: #c0c0c0;
+}
